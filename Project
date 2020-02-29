@@ -1,0 +1,90 @@
+public class FibClass {
+	  public static Integer nFibonacci(integer num){
+		
+		integer num1 = 1;
+		integer num2 = 1;
+		integer num3 = 0;
+		integer count = 0;
+			
+		while (count < num) {
+			num2 = num1;
+			num1 = num3;
+			num3 = 0;
+			num3 = num1 + num2;			
+			count++;				
+	    }
+	    return num3;
+		 }
+	 
+	 	public static integer[] sortArray( integer[] intList ) {
+		  for (integer i = 0; i < intList.size()-1; i++){
+			integer min = i;
+			for (integer j = i+1; j < intList.size(); j++)
+			  if (intList[j] < intList[min])  
+				 min = j;		
+			integer temp = intList[i];
+			intList[i] = intList[min];
+			intList[min] = temp;
+	      } 
+	       return intList;	
+	    }	
+
+	 
+			public static Integer nFactorial( Integer n) {
+				 
+				if(n==0){
+					n=1; 
+				 } else {
+		        for (integer i = n-1 ;i >0; i--) {
+			       n*=i;
+		         }
+				 }
+				 return n;
+			}
+
+			 public static Integer[] rotateLeftNTimes(Integer[] ar, Integer n) {
+				  integer temp = 0;
+				  integer [] tempAr = new integer[ar.size()];
+				  integer count =0;
+
+					while (count< n) {
+
+					  for (integer i=0; i<ar.size(); i++){
+	                tempAr[i] = ar[i];
+					  }
+	             for (integer i=0; i<ar.size(); i++){
+		           ar[ar.size()-1] = tempAr[0];
+		           if(i<ar.size()-1){
+		              ar[i] = tempAr[i+1];
+		            }
+			      }	
+			      count++;
+					  }
+				
+					 return ar;
+				 }
+
+			  public static Boolean bracketsAreBalanced(String s) {
+					Boolean isBalanced;   
+					switch on s {
+
+						when '()','()()','(())', '({[]})' {     
+							isBalanced = true;
+						 }  
+
+						 when else {       
+							 isBalanced = false;
+						 }
+
+					 }   
+					return isBalanced;
+				  }
+	 
+			  public static void udateAccountSize() {
+				  Account myAccounts = new Account();
+				  
+	 
+					
+			  }
+	  
+}
