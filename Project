@@ -1,5 +1,5 @@
 public class FibClass {
-	  public static Integer nFibonacci(integer num){
+     public static Integer nFibonacci(integer num){
 		
 		integer num1 = 1;
 		integer num2 = 1;
@@ -14,9 +14,9 @@ public class FibClass {
 			count++;				
 	    }
 	    return num3;
-		 }
-	 
-	 	public static integer[] sortArray( integer[] intList ) {
+       }
+    
+    	public static integer[] sortArray( integer[] intList ) {
 		  for (integer i = 0; i < intList.size()-1; i++){
 			integer min = i;
 			for (integer j = i+1; j < intList.size(); j++)
@@ -29,29 +29,29 @@ public class FibClass {
 	       return intList;	
 	    }	
 
-	 
-			public static Integer nFactorial( Integer n) {
-				 
-				if(n==0){
-					n=1; 
-				 } else {
+    
+         public static Integer nFactorial( Integer n) {
+             
+            if(n==0){
+               n=1; 
+             } else {
 		        for (integer i = n-1 ;i >0; i--) {
 			       n*=i;
 		         }
-				 }
-				 return n;
-			}
+             }
+             return n;
+         }
 
-			 public static Integer[] rotateLeftNTimes(Integer[] ar, Integer n) {
-				  integer temp = 0;
-				  integer [] tempAr = new integer[ar.size()];
-				  integer count =0;
+          public static Integer[] rotateLeftNTimes(Integer[] ar, Integer n) {
+              integer temp = 0;
+              integer [] tempAr = new integer[ar.size()];
+              integer count =0;
 
-					while (count< n) {
+               while (count< n) {
 
-					  for (integer i=0; i<ar.size(); i++){
+                 for (integer i=0; i<ar.size(); i++){
 	                tempAr[i] = ar[i];
-					  }
+                 }
 	             for (integer i=0; i<ar.size(); i++){
 		           ar[ar.size()-1] = tempAr[0];
 		           if(i<ar.size()-1){
@@ -59,32 +59,37 @@ public class FibClass {
 		            }
 			      }	
 			      count++;
-					  }
+                 }
 				
-					 return ar;
-				 }
+                return ar;
+             }
 
-			  public static Boolean bracketsAreBalanced(String s) {
-					Boolean isBalanced;   
-					switch on s {
+           public static Boolean bracketsAreBalanced(String s) {
+               Boolean isBalanced;   
+               switch on s {
 
-						when '()','()()','(())', '({[]})' {     
-							isBalanced = true;
-						 }  
+                  when '()','()()','(())', '({[]})' {     
+                     isBalanced = true;
+                   }  
 
-						 when else {       
-							 isBalanced = false;
-						 }
+                   when else {       
+                      isBalanced = false;
+                   }
 
-					 }   
-					return isBalanced;
-				  }
-	 
-			  public static void udateAccountSize() {
-				  Account myAccounts = new Account();
-				  
-	 
-					
-			  }
-	  
+                }   
+               return isBalanced;
+              }
+    
+    
+           public static void udateAccountSize() {
+          
+                  List<Account> myAccounts = [SELECT Id,Name,Active__c,Size__c,NumberOfEmployees FROM Account WHERE Active__c = 'Yes'];
+                  for(Account acct :myAccounts) {   
+                   if(acct.NumberOfEmployees >= 1 &&  acct.NumberOfEmployees <=1000) {acct.Size__c = 'small';} 
+                   if(acct.NumberOfEmployees >= 1001 &&  acct.NumberOfEmployees <=10000) {acct.Size__c = 'medium';}   
+                   if(acct.NumberOfEmployees > 10000) {acct.Size__c = 'large';}       
+                  }
+               
+           }
+     
 }
