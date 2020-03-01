@@ -89,7 +89,7 @@ public class FibClass {
                    if(acct.NumberOfEmployees >= 1001 &&  acct.NumberOfEmployees <=10000) {acct.Size__c = 'medium';}   
                    if(acct.NumberOfEmployees > 10000) {acct.Size__c = 'large';}       
                   }
-               
+                update myAccounts;
            }
      
 }
